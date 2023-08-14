@@ -1,0 +1,45 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>io.github.oshai.klp.kotlinloggingplugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Kotlinloggingplugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="ohadshai@gmail.com" url="https://www.yourcompany.com">kotlin-logging</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Kotlin-Logging Plugin for IntelliJ IDEA and other JetBrains IDEs.
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <group id="io.github.oshai.klp.kotlinloggingplugin.Logging" text="Logging" description="Logging" popup="true">
+            <!-- Remove the <add-to-group> element from here -->
+        </group>
+        <action id="io.github.oshai.klp.kotlinloggingplugin.AddLoggerAction" class="io.github.oshai.klp.kotlinloggingplugin.AddLoggerAction" text="Add Log4j2 Logger" description="Adds a Logger field to the Java file" >
+            <!-- Add the <add-to-group> element here -->
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+        <action id="io.github.oshai.klp.kotlinloggingplugin.AddKotlinLoggerAction" class="io.github.oshai.klp.kotlinloggingplugin.AddKotlinLoggerAction" text="Add Kotlin Logger" description="Adds a Logger field to the Kotlin file" >
+            <!-- Add the <add-to-group> element here -->
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+
+    </actions>
+</idea-plugin>
